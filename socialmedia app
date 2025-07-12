@@ -1,0 +1,74 @@
+#index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SocialSphere</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <div class="logo">🌐 SocialSphere</div>
+    <input type="text" class="search" placeholder="Search users, hashtags...">
+    <div class="actions">
+      <button onclick="toggleDarkMode()">🌙</button>
+      <span class="notification">🔔</span>
+      <img src="assets/images/user.jpg" class="profile-pic" alt="Profile"/>
+    </div>
+  </header>
+
+  <main>
+    <section class="stories">
+      <h3>Stories</h3>
+      <div class="story-list">
+        <div class="story">+ Add Story</div>
+        <div class="story">👩‍💻 Alice</div>
+        <div class="story">📷 Bob</div>
+      </div>
+    </section>
+
+    <section class="create-post">
+      <textarea placeholder="What's on your mind?"></textarea>
+      <button>Post</button>
+    </section>
+
+    <section class="feed">
+      <div class="post">
+        <h4>👩‍💻 Alice</h4>
+        <p>Loving the weather today! ☀️</p>
+        <div class="post-actions">
+          <button onclick="likePost(this)">❤️ Like</button>
+          <button>💬 Comment</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 SocialSphere</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+#style.css
+
+
+
+#script.js
+function likePost(button) {
+  if (button.textContent.includes("Like")) {
+    button.textContent = "💖 Liked";
+    button.style.color = "red";
+  } else {
+    button.textContent = "❤️ Like";
+    button.style.color = "";
+  }
+}
+
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+}
